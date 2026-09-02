@@ -1,142 +1,221 @@
 [accessibility]
-ui_scale = 1.20
+ui_scale = 1.0000000074505806
 
-[bar.default]
-center = [ "workspaces", "spacer_1", "active_window" ]
-concave_edge_corners = true
-end = [ "media", "spacer_1", "tray", "notifications", "network", "volume", "session" ]
-margin_edge = 0
-margin_ends = 0
-radius_bottom_left = 12
-radius_bottom_right = 12
-radius_top_left = 0
-radius_top_right = 0
-scale = 1.10
-start = [ "launcher", "clock", "spacer_1", "group:g1" ]
-thickness = 35
+[bar]
+order = [ "default" ]
 
-    [[bar.default.capsule_group]]
-    border = ""
-    fill = "on_secondary"
-    id = "g1"
-    members = [ "temp", "sysmon_2", "sysmon_3" ]
-    opacity = 1.0
-    padding = 6.0
+    [bar.default]
+    background_opacity = 0.79999998211860657
+    capsule = true
+    capsule_foreground = "on_surface_variant"
+    capsule_radius = 14
+    capsule_thickness = 0.69999998807907104
+    center = [ "workspaces" ]
+    color = "primary"
+    concave_edge_corners = true
+    end = [ "media", "tray", "weather", "volume", "network", "clock", "notifications", "session" ]
+    font_family = "Inter"
+    font_weight = 400
+    margin_edge = 4
+    margin_ends = 14
+    padding = 6
+    radius = 12
+    radius_bottom_left = 12
+    radius_bottom_right = 12
+    radius_top_right = 12
+    start = [ "launcher", "group:g1", "active_window" ]
+    thickness = 38
+    widget_spacing = 10
+
+        [[bar.default.capsule_group]]
+        accordion = false
+        accordion_direction = "end"
+        border = ""
+        enabled = true
+        fill = "surface_variant"
+        foreground = "on_surface_variant"
+        id = "g1"
+        members = [ "temp", "ram", "cpu" ]
+        opacity = 1.0
+        padding = 6.0
+
+[brightness]
+minimum_brightness = 0.19999999552965164
+
+[desktop_widgets]
+enabled = false
+
+[idle]
+behavior_order = [ "screen-off", "lock", "lock-and-suspend" ]
+
+    [idle.behavior.lock]
+    action = "lock"
+    enabled = true
+    timeout = 600.0
+
+    [idle.behavior.lock-and-suspend]
+    action = "lock_and_suspend"
+    enabled = true
+    timeout = 900.0
+
+    [idle.behavior.screen-off]
+    action = "screen_off"
+    enabled = true
+    timeout = 300.0
+
+[location]
+auto_locate = true
+
+[lockscreen_widgets]
+enabled = false
+schema_version = 2
+widget_order = [ "lockscreen-login-box@DP-1", "lockscreen-login-box@eDP-1" ]
+
+    [lockscreen_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@DP-1"]
+    box_height = 196.0
+    box_width = 720.0
+    cx = 400.0
+    cy = 672.5
+    output = "DP-1"
+    placement_height = 900.0
+    placement_width = 800.0
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@DP-1".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.88
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@eDP-1"]
+    box_height = 196.0
+    box_width = 810.0
+    cx = 960.0001220703125
+    cy = 898.0
+    output = "eDP-1"
+    placement_height = 1080.0
+    placement_width = 1920.0
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@eDP-1".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.88
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
+
+[osd]
+background_opacity = 0.9499999787658453
 
 [shell]
 clipboard_image_action_command = "satty -f -"
+corner_radius_scale = 0.7500000111758709
+font_family = "Inter"
 launch_apps_as_systemd_services = true
 polkit_agent = true
-settings_show_advanced = true
 
     [shell.greeter_sync]
-    auto_sync = true
+    auto_sync = false
+
+    [shell.launcher]
+    categories = false
+    compact = true
 
     [shell.panel]
-    open_near_click_control_center = true
+    control_center_placement = "attached"
+    control_center_position = "top_center"
+    launcher_position = "bottom_center"
     session_placement = "floating"
-    session_position = "center"
+    session_position = "top_center"
+    transparency_mode = "soft"
+    wallpaper_placement = "attached"
+    wallpaper_position = "center"
 
-    [shell.screenshot]
-    copy_to_clipboard = false
-    pipe_command = "satty -f -"
-    pipe_to_command = true
-    save_to_file = false
-
-    [[shell.session.actions]]
-    action = "lock"
-    countdown_seconds = 0.0
-    enabled = true
-    shortcut = "1"
-    variant = "default"
-
-    [[shell.session.actions]]
-    action = "logout"
-    countdown_seconds = 0.0
-    enabled = true
-    shortcut = "2"
-    variant = "default"
-
-    [[shell.session.actions]]
-    action = "lock_and_suspend"
-    countdown_seconds = 3.0
-    enabled = true
-    shortcut = "3"
-    variant = "default"
-
-    [[shell.session.actions]]
-    action = "reboot"
-    countdown_seconds = 3.0
-    enabled = true
-    shortcut = "4"
-    variant = "default"
-
-    [[shell.session.actions]]
-    action = "shutdown"
-    countdown_seconds = 3.0
-    enabled = true
-    shortcut = "5"
-    variant = "destructive"
-
-[system.monitor]
-gpu_poll_seconds = 2
+    [shell.shadow]
+    alpha = 0.19999999552965164
 
 [theme]
+builtin = "Gruvbox"
+community_palette = "Miasma"
 mode = "dark"
-source = "wallpaper"
+source = "community"
 wallpaper_scheme = "m3-tonal-spot"
 
     [theme.templates]
-    builtin_ids = [ "btop", "gtk3", "gtk4", "kcolorscheme", "kitty", "qt", "alacritty" ]
+    builtin_ids = [ "btop", "gtk3", "gtk4", "ghostty", "kcolorscheme", "kitty", "qt" ]
+
+[wallpaper.default]
+path = "/home/craig/Pictures/Wallpapers/cachyos-wallpapers/cachygalaxy99.jpg"
+
+[wallpaper.last]
+path = "/home/craig/Pictures/Wallpapers/cachyos-wallpapers/cachygalaxy99.jpg"
+
+[wallpaper.monitors.eDP-1]
+path = "/home/craig/Pictures/Wallpapers/cachyos-wallpapers/cachygalaxy99.jpg"
+
+[widget.active_window]
+color = "on_surface_variant"
 
 [widget.clock]
-color = "secondary"
-format = "{:%H:%M %A %m/%d/%y}"
+color = "on_surface_variant"
+format = "{:%a %-d %b, %I:%M %p}"
 
 [widget.launcher]
-color = "secondary"
+color = "on_surface_variant"
 
 [widget.media]
+color = "on_surface_variant"
 hide_when_no_media = true
-title_scroll = "on_hover"
 
 [widget.network]
-color = "secondary"
+color = "on_surface_variant"
 
 [widget.notifications]
-color = "secondary"
+color = "on_surface_variant"
 
 [widget.session]
 color = "error"
 
-[widget.spacer_1]
-type = "spacer"
-
-[widget.temp]
-show_value = false
-
-[widget.sysmon_2]
-glyph = "gpu-usage"
-show_value = false
-stat = "gpu_temp"
-type = "sysmon"
-
-[widget.sysmon_3]
-glyph = "cpu-2"
-stat = "ram_used"
-type = "sysmon"
-
 [widget.tray]
-capsule = true
-capsule_fill = "on_secondary"
+color = "on_surface_variant"
 
 [widget.volume]
-color = "secondary"
+color = "on_surface_variant"
+
+[widget.weather]
+color = "on_surface_variant"
+show_condition = false
 
 [widget.workspaces]
-active_pill_size = 2.5
-capsule = true
-capsule_fill = "on_primary"
-inactive_pill_size = 1.0
-pill_scale = 0.80
+capsule_fill = "surface_variant"
+empty_color = "on_surface_variant"
+label_source = "name"
+max_label_chars = 12
+occupied_color = "on_surface_variant"
 show_labels = false

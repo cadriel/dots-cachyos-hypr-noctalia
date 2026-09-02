@@ -1,4 +1,8 @@
--- Auto-start config
+-------------------
+---- AUTOSTART ----
+-------------------
+
+-- See https://wiki.hypr.land/Configuring/Basics/Autostart/
 -- if you dont use UWSM add your auto start programs here, otherwise use XDG autostart https://wiki.archlinux.org/title/XDG_Autostart
 
 hl.on("hyprland.start", function ()

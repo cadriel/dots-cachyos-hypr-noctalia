@@ -1,46 +1,59 @@
--- Look and feel configuration
+-----------------------
+----- DECORATIONS -----
+-----------------------
 
+-- Refer to https://wiki.hypr.land/Configuring/Basics/Variables/
 hl.config({
     general = {
-        gaps_in = 3,
-        gaps_out = 8,
+        gaps_in = 8,
+        gaps_out = 14,
+
         border_size = 2,
-        extend_border_grab_area = 10,
-        resize_on_border = true,
+
         col = {
             active_border = {
-                colors = { CACHYLGREEN, CACHYDGREEN },
-                angle = 45,
+                colors = {"rgba(797979ad)", "rgba(595959ad)"},
+                angle = 100,
             },
-            inactive_border = CACHYGRAY,
-        },
-    },
-    group = {
-        col = {
-            border_active = CACHYLBLUE,
-            border_inactive = CACHYGRAY,
-            border_locked_active = CACHYDBLUE,
-            border_locked_inactive = CACHYGRAY,
-        },
-        groupbar = {
-            col = {
-                active = CACHYLGREEN,
-                inactive = CACHYGRAY,
-                locked_active = CACHYDBLUE,
-                locked_inactive = CACHYGRAY,
+            inactive_border = {
+                colors = {"rgba(121314d3)"},
+                angle = 209,
             },
         },
+        
+        -- Set to true to enable resizing windows by clicking and dragging on borders and gaps
+        resize_on_border = true,
+
+        -- Please see https://wiki.hypr.land/Configuring/Advanced-and-Cool/Tearing/ before you turn this on
+        allow_tearing = false,
+
+        layout = "dwindle",
+
+        -- force_split = 1,
     },
+
     decoration = {
-        dim_special = 0.3,
-        rounding = 10,
-        active_opacity = 0.95,
-        inactive_opacity = 0.85,
-        fullscreen_opacity = 1,
-        blur = {
-            size = 5,
-            passes = 4,
-            special = true,
+        rounding       = 12,
+        rounding_power = 2,
+
+        dim_strength = 0.05,
+
+        -- Change transparency of focused and unfocused windows
+        active_opacity   = 1.0,
+        inactive_opacity = 1.0,
+
+        shadow = {
+            enabled      = true,
+            range        = 8,
+            render_power = 3,
+            color        = 0xee1a1a1a,
         },
-    },
+
+        blur = {
+            enabled   = true,
+            size      = 3,
+            passes    = 2,
+            vibrancy  = 0.1696,
+        },
+    }
 })

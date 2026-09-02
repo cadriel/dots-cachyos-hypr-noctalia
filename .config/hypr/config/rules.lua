@@ -1,4 +1,35 @@
--- Window rules wiki https://wiki.hypr.land/Configuring/Basics/Window-Rules/
+--------------------------------
+---- WINDOWS AND WORKSPACES ----
+--------------------------------
+
+-- See https://wiki.hypr.land/Configuring/Basics/Window-Rules/
+-- and https://wiki.hypr.land/Configuring/Basics/Workspace-Rules/
+
+local suppressMaximizeRule = hl.window_rule({
+    -- Ignore maximize requests from all apps. You'll probably like this.
+    name  = "suppress-maximize-events",
+    match = { class = ".*" },
+
+    suppress_event = "maximize",
+})
+suppressMaximizeRule:set_enabled(true)
+
+hl.window_rule({
+    -- Fix some dragging issues with XWayland
+    name  = "fix-xwayland-drags",
+    match = {
+        class      = "^$",
+        title      = "^$",
+        xwayland   = true,
+        float      = true,
+        fullscreen = false,
+        pin        = false,
+    },
+
+    no_focus = true,
+})
+
+-- Custom from here down
 
 -- Generic floating position
 hl.window_rule({ match = { float = true }, center = true, persistent_size = true })
@@ -76,41 +107,35 @@ hl.window_rule({ match = { class = "^(mpv|org.kde.haruna|.*plex.*|org\\.kde\\.gw
 
 -- Float Utility Windows
 local floatApps = {
+    { class = "(xdg-desktop-portal-gtk|xdg-desktop-portal-kde|xdg-desktop-portal-hyprland)(.*)" },
     { class = "^(kvantummanager|qt[56]ct|nwg-look)$" },
     { class = "^(org.pulseaudio.pavucontrol|blueman-manager|nm-applet|nm-connection-editor)$" },
     { title = "^(Winetricks.*|Protontricks.*)$" },
-}
-for _, m in ipairs(floatApps) do hl.window_rule({ match = m, float = true }) end
-
--- Float Common Modals
-local modalMatches = {
+    { initial_class = "hyprland-share-picker" },
+    { title = "CachyOS Hello" },
+    { title = "HyprMod" },
+    { class = "^(hyprland-share-picker)$"},
+    { class = "(hyprpolkitagent|qt-sudo)(.*)" },
     { title = "^(Open|Authentication Required|Add Folder to Workspace|Choose Files|Save As|Confirm to replace files|File Operation Progress)$" },
     { initial_title = "^(Open File)$" },
     { class = "^([Xx]dg-desktop-portal-gtk)$" },
     { title = "^(File Upload|Choose wallpaper|Library)(.*)$" },
     { class = "^(.*dialog.*)$" },
     { title = "^(.*dialog.*)$" },
-    { class = "^(hyprland-share-picker)$"},
 }
-for _, m in ipairs(modalMatches) do hl.window_rule({ match = m, float = true }) end
+for _, m in ipairs(floatApps) do hl.window_rule({ match = m, float = true }) end
 
--- Ignore maximize requests from all apps. You'll probably like this.
-hl.window_rule({
-    name  = "suppress-maximize-events",
-    match = { class = ".*" },
-    suppress_event = "maximize",
-})
+-- Window transparency
+hl.window_rule({ match = { initial_class = "thunar" }, opacity = 0.9 })
 
--- Fix some dragging issues with XWayland
-hl.window_rule({
-    name  = "fix-xwayland-drags",
-    match = {
-        class      = "^$",
-        title      = "^$",
-        xwayland   = true,
-        float      = true,
-        fullscreen = false,
-        pin        = false,
-    },
-    no_focus = true,
+-- Noctalia settings
+hl.layer_rule({
+  name = "noctalia",
+  match = {
+    namespace = "^noctalia-(bar-.+|notification|dock|panel|attached-panel|osd|window-switcher)$",
+  },
+  no_anim = true,
+  ignore_alpha = 0.5,
+  blur = true,
+  blur_popups = true,
 })
