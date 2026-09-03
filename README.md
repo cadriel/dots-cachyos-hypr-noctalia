@@ -1,4 +1,4 @@
-# dots-cachyos-hypr-noctalia
+27;2;13~# dots-cachyos-hypr-noctalia
 
 ## Installation
 
@@ -8,11 +8,9 @@
 git clone --bare git@github.com:cadriel/dots-cachyos-hypr-noctalia.git $HOME/.dotfiles
 ```
 
-2. Run the install
+2. Add the alias (auto-created via dots once applied)
 ```sh
-cd .dotfiles
-chmod 755 ./scripts/install.sh
-./scripts/install.sh
+alias dots='/usr/bin/git --git-dir="$HOME/.dotfiles" --work-tree="$HOME"'
 ```
 
 3. Backup existing dotfiles (optional)
@@ -29,4 +27,11 @@ xargs -I{} mv {} .dotfiles-backup/{}
 ```
 dots checkout -f
 dots config --local status.showUntrackedFiles no
+```
+
+4. Run the install
+```sh
+cd ~
+chmod 755 ./scripts/install.sh
+./scripts/install.sh
 ```
