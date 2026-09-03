@@ -1,8 +1,8 @@
 #!/usr/bin/bash
 
-sudo pacman -Syu --needed yay qt5-wayland qt6-wayland           \
+sudo pacman -Syu --needed yay qt5-wayland qt6-wayland                 \
   thunar thunar-volman thunar-archive-plugin thunar-media-tags-plugin \
-  file-roller 7zip                                                    \
+  file-roller 7zip syncthing                                          \
   ttf-jetbrains-mono-nerd inter-font tela-circle-icon-theme-standard
 
 # Apps
