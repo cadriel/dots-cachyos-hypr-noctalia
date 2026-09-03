@@ -18,6 +18,11 @@ hl.config({
 
         accel_profile = "flat",
     },
+
+    cursor = {
+        hide_on_key_press = true,
+        -- no_warps = true,
+    }
 })
 
 hl.gesture({
