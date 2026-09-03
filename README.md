@@ -10,9 +10,14 @@ git clone --bare git@github.com:cadriel/dots-cachyos-hypr-noctalia.git $HOME/.do
 
 2. Apply. This will backup, and checkout the dotfiles.
 ```sh
-cd ~
-git --git-dir="$HOME/.dotfiles" --work-tree="$HOME" checkout -- scripts/apply.sh
-chmod 755 scripts/apply.sh
+```
+
+```sh
+git --git-dir="$HOME/.dotfiles" --work-tree="$HOME" checkout -- scripts/apply.sh \
+chmod 755 ~/scripts/apply.sh
+```
+
+```sh
 ./scripts/apply.sh
 ```
 
