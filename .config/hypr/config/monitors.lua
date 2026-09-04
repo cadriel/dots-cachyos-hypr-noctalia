@@ -8,4 +8,5 @@ hl.monitor({
     mode      = "3840x2160@240",
     position  = "auto",
     scale     = "1.5",
+    bitdepth  = 10,
 })

@@ -14,6 +14,9 @@ hl.config({
     },
     render = {
         direct_scanout = 2,
+        cm_enabled = true,
+        cm_auto_hdr = true,    -- only takes effect once a monitor's cm mode is "auto" (currently srgb, so this is a no-op for now)
+        send_content_type = true,
     },
     xwayland = {
         force_zero_scaling = true

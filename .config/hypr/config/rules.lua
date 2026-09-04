@@ -47,43 +47,23 @@ hl.window_rule({match = {class = "org.freedesktop.impl.portal.desktop.kde" }, si
 hl.window_rule({match = {class = "^(Zotero)$" },                             float = true})
 hl.window_rule({match = {class = "^(Zotero)$" },                             size = {"(monitor_w*0.45)", "(monitor_h*0.45)"} })
 hl.window_rule({match = {title = "^(Winetricks.*|Protontricks.*)$" },        float = true})
+hl.window_rule({match = {class = "^(dev\\.)?(noctalia\\.Noctalia(\\.Settings)?)$" }, float = true, size = {"monitor_w*0.70", "monitor_h*0.70"} })
 
 -- Gaming
-local gamingApps = "^(steam_app.*|gamescope)$"
+-- excludes steam_app_0, a phantom class Steam uses for its own overlay/notification windows, not real games
+local gamingApps      = "^(steam_app_[1-9][0-9]*|gamescope)$"
 local gamingWorkspace = "name:gaming"
 
-hl.window_rule({ match = { content = "game" }, workspace = gamingWorkspace })
-hl.window_rule({ match = { xdg_tag = "^(.*game.*)$" }, workspace = gamingWorkspace, fullscreen_state = 2, content = "game", sync_fullscreen = true })
-hl.window_rule({ match = { class = gamingApps }, workspace = gamingWorkspace })
-hl.window_rule({ match = { class = "^(steam)$", title = "^(Friends List)$" }, float = true })
-hl.window_rule({ match = { class = "^(steam)$", title = "^(Launching\\.{3})$" }, float = true, center = true, workspace = gamingWorkspace })
-hl.window_rule({
-    match = {
-        class         = gamingApps,
-        title         = "^(.+)$",
-        initial_title = "negative:^(.*\\\\home\\\\.*)$",
-    },
-    content          = "game",
-    decorate         = false,
-    fullscreen_state = 2,
-    size             = { "monitor_w", "monitor_h" },
-    sync_fullscreen  = true,
-})
-hl.window_rule({
-    match = {
-        class         = "^(steam_app.*)$",
-        initial_title = "^$",
-    },
-    center           = true,
-    float            = true,
-    fullscreen       = false,
-    fullscreen_state = 0,
-    immediate        = true,
-    workspace        = gamingWorkspace,
-})
+hl.window_rule({match = {xdg_tag = "^(.*game.*)$" },                                                              workspace = gamingWorkspace, content = "game" })
+hl.window_rule({match = {content = "game" },                                                                      workspace = gamingWorkspace })
+hl.window_rule({match = {class = gamingApps },                                                                    workspace = gamingWorkspace })
+hl.window_rule({match = {class = "^(steam)$", title = "^(Friends List)$" },                                       float = true})
+hl.window_rule({match = {class = "^(steam)$", title = "^(Launching\\.{3})$" },                                    float = true, center = true, workspace = gamingWorkspace })
+hl.window_rule({match = {class = gamingApps, title = "^(.+)$", initial_title = "negative:^(.*\\\\home\\\\.*)$" }, content = "game", decorate = false})
+hl.window_rule({match = {class = gamingApps, initial_title = "^$" },                                              center = true, float = true, immediate = true, workspace = gamingWorkspace })
 
 -- Don't let noctalia's idle ladder screen-off/lock/suspend mid-game
-hl.window_rule({ match = { workspace = gamingWorkspace }, idle_inhibit = "fullscreen" })
+hl.window_rule({match = {content = "game" },                                                                      idle_inhibit = "fullscreen"})
 
 -- Move
 -- kde-material-you-colors spawns a window when changing dark/light theme. This is to make sure it doesn't interfere at all.
@@ -109,7 +89,7 @@ hl.window_rule({match = {title = ".*is sharing (a window|your screen).*" }, floa
 hl.window_rule({match = {title = ".*is sharing (a window|your screen).*" }, pin = true})
 hl.window_rule({match = {title = ".*is sharing (a window|your screen).*" }, move = {"(monitor_w*.5-window_w*.5)", "(monitor_h-window_h-12)"} })
 
--- --- Tearing ---
+-- Tearing ---
 hl.window_rule({match = {title = ".*\\.exe" }, immediate = true})
 hl.window_rule({match = {title = ".*minecraft.*" }, immediate = true})
 hl.window_rule({match = {class = "^(steam_app).*" }, immediate = true})
