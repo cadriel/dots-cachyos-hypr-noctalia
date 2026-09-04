@@ -5,7 +5,7 @@
 -- See https://wiki.hypr.land/Configuring/Basics/Monitors/
 hl.monitor({
     output    = MONITOR1,
-    mode      = "preferred",
+    mode      = "3840x2160@240",
     position  = "auto",
     scale     = "1.5",
 })
