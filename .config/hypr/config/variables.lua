@@ -1,5 +1,4 @@
 -- Hyprland default apps
-
 TERMINAL     = "ghostty"
 FILE_MANAGER = "thunar"
 BROWSER      = "helium-browser"
