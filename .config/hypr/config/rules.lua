@@ -50,8 +50,7 @@ hl.window_rule({match = {title = "^(Winetricks.*|Protontricks.*)$" },        flo
 hl.window_rule({match = {class = "^(dev\\.)?(noctalia\\.Noctalia(\\.Settings)?)$" }, float = true, size = {"monitor_w*0.70", "monitor_h*0.70"} })
 
 -- Gaming
--- excludes steam_app_0, a phantom class Steam uses for its own overlay/notification windows, not real games
-local gamingApps      = "^(steam_app_[1-9][0-9]*|gamescope)$"
+local gamingApps      = "^(steam_app_.*|gamescope)$"
 local gamingWorkspace = "name:gaming"
 
 hl.window_rule({match = {xdg_tag = "^(.*game.*)$" },                                                              workspace = gamingWorkspace, content = "game" })
