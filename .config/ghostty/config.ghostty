@@ -4,3 +4,10 @@ background-blur = true
 window-padding-x = 14
 window-padding-y = 14
 window-padding-balance = true
+
+# Cursor trail (custom-shader requires a block cursor to render; shell
+# integration otherwise switches to a bar cursor at the prompt, which would
+# silently disable the effect most of the time)
+cursor-style = block
+shell-integration-features = no-cursor
+custom-shader = shaders/cursor_tail.glsl

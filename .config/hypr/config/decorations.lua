@@ -12,11 +12,11 @@ hl.config({
 
         col = {
             active_border = {
-                colors = {"rgba(797979ad)", "rgba(595959ad)"},
+                colors = {"rgba(8c8c8ce6)", "rgba(6c6c6ce6)"},
                 angle = 100,
             },
             inactive_border = {
-                colors = {"rgba(121314d3)"},
+                colors = {"rgba(454545f0)"},
                 angle = 209,
             },
         },
@@ -44,9 +44,9 @@ hl.config({
 
         shadow = {
             enabled      = true,
-            range        = 8,
+            range        = 16,
             render_power = 3,
-            color        = 0xee1a1a1a,
+            color        = "rgba(00000099)",
         },
 
         blur = {

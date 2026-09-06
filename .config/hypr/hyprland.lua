@@ -1,7 +1,7 @@
 -- CachyOS Hyprland Configuration
 
 require("config.variables")
-require("monitors")
+require("config.monitors")
 require("config.autostart")
 require("config.environment")
 require("config.permissions")
@@ -13,3 +13,4 @@ require("config.inputs")
 require("config.binds")
 require("config.rules")
 require("config.workspaces")
+
