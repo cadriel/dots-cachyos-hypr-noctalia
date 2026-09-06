@@ -9,7 +9,7 @@ local launchPrefix = "uwsm app -- " -- if you are not using UWSM, make this empt
 
 -- 1. Applications
 hl.bind(mainMod .. " + Return",                       hl.dsp.exec_cmd(launchPrefix .. TERMINAL), { description = "Terminal" })
-hl.bind("CONTROL + SHIFT + Escape",                   hl.dsp.exec_cmd(launchPrefix .. TERMINAL .. " -e btop"), { description = "Btop++" })
+hl.bind("CONTROL + ALT + Escape",                     hl.dsp.exec_cmd(launchPrefix .. TERMINAL .. " -e btop"), { description = "Btop++" })
 hl.bind(mainMod .. " + E",                            hl.dsp.exec_cmd(launchPrefix .. FILE_MANAGER), { description = "File manager" })
 hl.bind(mainMod .. " + T",                            hl.dsp.exec_cmd(launchPrefix .. EDITOR), { description = "Editor" })
 hl.bind(mainMod .. " + C",                            hl.dsp.exec_cmd(launchPrefix .. CALCULATOR), { description = "Calculator" })

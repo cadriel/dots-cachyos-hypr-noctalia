@@ -1,4 +1,3 @@
-theme = noctalia
 background-opacity = 0.95
 background-blur = true
 window-padding-x = 14
@@ -11,3 +10,4 @@ window-padding-balance = true
 cursor-style = block
 shell-integration-features = no-cursor
 custom-shader = shaders/cursor_tail.glsl
+theme = noctalia

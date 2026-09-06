@@ -7,7 +7,8 @@ sudo pacman -Syu --needed yay qt5-wayland qt6-wayland starship           \
   ttf-jetbrains-mono-nerd inter-font tela-circle-icon-theme-standard
   
 # Apps
-sudo pacman -S --needed helium-browser-bin marknote ghostty goverlay
+sudo pacman -S --needed helium-browser-bin marknote ghostty goverlay     \
+  proton-mail-bin proton-pass vscodium zapzap
 
 # AUR
-yay -S --needed qt6ct-kde qt5ct-kde darkly-bin
+yay -S --needed qt6ct-kde qt5ct-kde darkly-bin fastpotify-bin
