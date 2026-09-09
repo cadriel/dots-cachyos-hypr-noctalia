@@ -27,16 +27,20 @@ hl.config({
         -- Please see https://wiki.hypr.land/Configuring/Advanced-and-Cool/Tearing/ before you turn this on
         allow_tearing = true,
 
+        no_focus_fallback = true,
+
         layout = "dwindle",
 
         -- force_split = 1,
     },
 
     decoration = {
-        rounding       = 12,
-        rounding_power = 2,
+        rounding       = 18,
+        rounding_power = 2.5,
 
+        dim_inactive = true,
         dim_strength = 0.05,
+        dim_special = 0.2,
 
         -- Change transparency of focused and unfocused windows
         active_opacity   = 1.0,

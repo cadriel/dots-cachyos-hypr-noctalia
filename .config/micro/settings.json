@@ -1,3 +1,8 @@
 {
-  "colorscheme": "noctalia"
+    "colorscheme": "noctalia",
+    "pluginchannels": [
+        "https://raw.githubusercontent.com/Neko-Box-Coder/unofficial-plugin-channel/stable/channel.json",
+        "https://raw.githubusercontent.com/micro-editor/plugin-channel/master/channel.json"
+    ],
+    "tabsize": 2
 }

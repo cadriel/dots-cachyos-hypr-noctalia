@@ -10,13 +10,17 @@ hl.config({
         middle_click_paste = false,
         enable_swallow = true,
         swallow_regex = "(kitty|ghostty|[Kk]onsole|Alacritty|gnome-terminal|xfce[0-9]?-terminal)",
-        vrr = 2, -- fullscreen-only: OLED panels can flicker at the variable/low refresh rates the idle desktop runs at with vrr=1
+		-- vrr = 0, -- off
+        -- vrr = 1, -- on
+        vrr = 2, -- on, fullscreen only
+        -- vrr = 3, -- on, content type game
     },
     render = {
         direct_scanout = 2,
-        cm_sdr_eotf = "srgb",
         cm_enabled = true,
-        cm_auto_hdr = 1,
+        -- cm_auto_hdr = 0, -- off
+        -- cm_auto_hdr = 1, -- switch to cm, hdr
+        cm_auto_hdr = 2, -- switch to cm, hdredid
         send_content_type = true,
     },
     xwayland = {
