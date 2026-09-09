@@ -30,7 +30,6 @@ hl.bind(mainMod .. " + V",                            hl.dsp.exec_cmd(noctCall .
 hl.bind(mainMod .. " + A",                            hl.dsp.exec_cmd(noctCall .. "panel-toggle control-center notifications"), { description = "Notifications" })
 hl.bind(mainMod .. " + K",                            hl.dsp.exec_cmd(noctCall .. "panel-toggle kenn/keybind-cheatsheet:cheatsheet"), { description = "Keybinds" })
 
-
 -- 3. Monitor moves
 hl.bind(mainMod .. " + SHIFT + 1",                    hl.dsp.window.move({ monitor = MONITOR1 }), { description = "Move to monitor 1" })
 hl.bind(mainMod .. " + SHIFT + 2",                    hl.dsp.window.move({ monitor = MONITOR2 }), { description = "Move to monitor 2" })
@@ -66,6 +65,8 @@ hl.bind(mainMod .. " + J",                            hl.dsp.layout("togglesplit
 hl.bind(mainMod .. " + D",                            hl.dsp.window.fullscreen({ mode = 1 }), { description = "Fill" })
 hl.bind(mainMod .. " + F",                            hl.dsp.window.fullscreen(), { description = "Fullscreen" })
 hl.bind(mainMod .. " + ALT + Space",                  hl.dsp.window.float({ action = "toggle" }), { description = "Float" })
+hl.bind(mainMod .. " + minus",                        hl.dsp.window.resize({ x = -20, y = 0, relative = true }), { repeating = true })
+hl.bind(mainMod .. " + equal",                        hl.dsp.window.resize({ x = 20, y = 0, relative = true }), { repeating = true })
 
 -- 8. Workspace focus
 hl.bind(mainMod .. " + CONTROL + Right",              hl.dsp.focus({ workspace = "m+1" }), { description = "Go Right" })
