@@ -8,6 +8,7 @@ window-padding-balance = true
 # integration otherwise switches to a bar cursor at the prompt, which would
 # silently disable the effect most of the time)
 cursor-style = block
-shell-integration-features = no-cursor
+# shell-integration-features = no-cursor sudo
+shell-integration-features = no-cursor, sudo, ssh-env, ssh-terminfo
 custom-shader = shaders/cursor_tail.glsl
 theme = noctalia

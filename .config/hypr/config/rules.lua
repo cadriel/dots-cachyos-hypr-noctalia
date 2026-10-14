@@ -48,6 +48,8 @@ hl.window_rule({match = {class = "org.freedesktop.impl.portal.desktop.kde" }, si
 hl.window_rule({match = {class = "^(Zotero)$" },                             float = true})
 hl.window_rule({match = {class = "^(Zotero)$" },                             size = {"(monitor_w*0.45)", "(monitor_h*0.45)"} })
 hl.window_rule({match = {title = "^(Winetricks.*|Protontricks.*)$" },        float = true})
+hl.window_rule({match = {title = "Shelly"},                                  float = true})
+hl.window_rule({ match = { class = "^(.*swash)$", title = "^(Satty)$" }, min_size = { "max(monitor_w, monitor_h)*0.35", "min(monitor_w, monitor_h)*0.35" }, float = true })
 
 -- Noctalia
 hl.window_rule({match = {class = "^(dev\\.)?(noctalia\\.Noctalia(\\.Settings)?)$" }, float = true, size = {"monitor_w*0.70", "monitor_h*0.70"} })
@@ -151,3 +153,15 @@ hl.layer_rule({ match = { namespace = "osk[0-9]*" }, ignore_alpha = 0.6})
 
 -- Launchers need to be FAST
 hl.layer_rule({ match = { namespace = "gtk4-layer-shell" }, no_anim = true})
+
+-- Noctalia layer rules
+hl.layer_rule({
+  name = "noctalia",
+  match = {
+    namespace = "^noctalia-(bar-.+|notification|dock|panel|attached-panel|osd|window-switcher)$",
+  },
+  no_anim = true,
+  ignore_alpha = 0.5,
+  blur = true,
+  blur_popups = true,
+})

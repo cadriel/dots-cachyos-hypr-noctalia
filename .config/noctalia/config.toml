@@ -264,19 +264,6 @@ directory = "/home/craig/Pictures/Wallpapers"
     [wallpaper.monitors.DP-2]
     path = "/home/craig/Pictures/Wallpapers/wallhaven-vpe2x3.jpg"
 
-    [wallpaper.monitors.eDP-1]
-    path = "/home/craig/Pictures/Wallpapers/cachyos-wallpapers/cachygalaxy99.jpg"
-
-    [[wallpaper.favorite]]
-    path = "/home/craig/Pictures/Wallpapers/wallhaven-lydd6r.jpg"
-    theme_mode = "auto"
-
-    [[wallpaper.favorite]]
-    community_palette = "Everforest Material"
-    palette_source = "community"
-    path = "/home/craig/Pictures/Wallpapers/wallhaven-xe93pd.png"
-    theme_mode = "dark"
-
 [widget.active_window]
 color = "on_surface_variant"
 

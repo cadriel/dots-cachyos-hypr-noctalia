@@ -3,7 +3,7 @@
 sudo pacman -Syu --needed yay qt5-wayland qt6-wayland starship           \
   thunar thunar-volman thunar-archive-plugin thunar-media-tags-plugin    \
   file-roller 7zip syncthing gvfs tumbler ddcutil vk-hdr-layer-kwin6-git \
-  swayimg \
+  gvfs-smb gvfs-dnssd gvfs-wsdd swayimg \
   ttf-jetbrains-mono-nerd inter-font tela-circle-icon-theme-standard
   
 # Apps

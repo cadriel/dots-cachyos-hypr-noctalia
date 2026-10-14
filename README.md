@@ -1,4 +1,4 @@
-27;2;13~# dots-cachyos-hypr-noctalia
+# dots-cachyos-hypr-noctalia
 
 ## Installation
 
