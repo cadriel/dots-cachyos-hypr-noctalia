@@ -8,6 +8,7 @@ hl.monitor({
     bitdepth = 10,
     -- cm = "edid",
     -- cm = "srgb",
+    -- cm = "hdr",
     -- cm = "hdredid",
     -- cm = "wide",
     -- cm = "auto",

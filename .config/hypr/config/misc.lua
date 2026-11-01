@@ -26,4 +26,8 @@ hl.config({
     xwayland = {
         force_zero_scaling = true
     },
+    ecosystem = {
+        no_donation_nag = true, -- disable the "support the project" donation popup
+        -- no_update_news  = true, -- disable the update-news popup after upgrades
+    },
 })

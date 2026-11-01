@@ -22,8 +22,8 @@ hl.curve("gracefulFade",   { type = "bezier", points = { {0.22, 1},    {0.36, 1}
 hl.curve("quickFadeOut",   { type = "bezier", points = { {0.4, 0},     {1, 1}       } }) -- accelerates away — anything disappearing
 
 -- Springs
-hl.curve("easy",           { type = "spring", mass = 1,   stiffness = 238.1191, dampening = 24.21279333 })
-hl.curve("graceful",       { type = "spring", mass = 1.1, stiffness = 170,      dampening = 20 })
+hl.curve("easy",           { type = "spring", mass = 1,   stiffness = 238.1191, damping = 24.21279333 })
+hl.curve("graceful",       { type = "spring", mass = 1.1, stiffness = 170,      damping = 20 })
 
 hl.animation({ leaf = "global",           enabled = true,  speed = 10,   bezier = "default" })
 hl.animation({ leaf = "border",           enabled = true,  speed = 5,    bezier = "easeOutQuint" })

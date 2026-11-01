@@ -25,6 +25,8 @@ hl.config({
     }
 })
 
+hl.device({ name = "joytokey", repeat_rate = 0 })
+
 hl.gesture({
     fingers = 3,
     direction = "horizontal",
