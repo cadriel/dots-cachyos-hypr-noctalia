@@ -49,6 +49,9 @@ hl.window_rule({match = {class = "^(Zotero)$" },                             flo
 hl.window_rule({match = {class = "^(Zotero)$" },                             size = {"(monitor_w*0.45)", "(monitor_h*0.45)"} })
 hl.window_rule({match = {title = "^(Winetricks.*|Protontricks.*)$" },        float = true})
 hl.window_rule({match = {title = "Shelly"},                                  float = true})
+-- RSI Launcher (Star Citizen, Wine/Electron): frameless window that draws its own square frame,
+-- so drop Hyprland's border/rounding/shadow to avoid clipped corners and a doubled outline.
+hl.window_rule({match = {class = "^(rsi launcher\\.exe)$" }, float = true, center = true, border_size = 0, rounding = 0, no_shadow = true })
 hl.window_rule({ match = { class = "^(.*swash)$", title = "^(Satty)$" }, min_size = { "max(monitor_w, monitor_h)*0.35", "min(monitor_w, monitor_h)*0.35" }, float = true })
 
 -- Noctalia
