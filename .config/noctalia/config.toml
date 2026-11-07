@@ -73,8 +73,8 @@ behavior_order = [ "screen-off", "lock", "lock-and-suspend" ]
 
     [idle.behavior.screen-off]
     action = "screen_off"
-    enabled = false
-    timeout = 300.0
+    enabled = true
+    timeout = 240.0
 
 [location]
 auto_locate = true

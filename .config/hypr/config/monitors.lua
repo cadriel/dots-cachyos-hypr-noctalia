@@ -15,8 +15,8 @@ hl.monitor({
 
      -- vrr = 0, -- off
     -- vrr = 1, -- on
-    vrr = 2, -- on, fullscreen only
-    -- vrr = 3, -- content type game
+    -- vrr = 2, -- on, fullscreen only
+    vrr = 3, -- content type game
 
     -- sdr_eotf = "default",
 

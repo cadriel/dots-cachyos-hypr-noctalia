@@ -12,11 +12,11 @@ hl.config({
         swallow_regex = "(kitty|ghostty|[Kk]onsole|Alacritty|gnome-terminal|xfce[0-9]?-terminal)",
 		-- vrr = 0, -- off
         -- vrr = 1, -- on
-        vrr = 2, -- on, fullscreen only
-        -- vrr = 3, -- on, content type game
+        -- vrr = 2, -- on, fullscreen only
+        vrr = 3, -- on, content type game
     },
     render = {
-        direct_scanout = 2,
+        direct_scanout = 0, -- 2 blacks out native-Wayland Wine games on NVIDIA when the cursor hides (hyprwm/Hyprland#14843)
         cm_enabled = true,
         -- cm_auto_hdr = 0, -- off
         -- cm_auto_hdr = 1, -- switch to cm, hdr

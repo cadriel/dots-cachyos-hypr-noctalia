@@ -58,18 +58,20 @@ hl.window_rule({ match = { class = "^(.*swash)$", title = "^(Satty)$" }, min_siz
 hl.window_rule({match = {class = "^(dev\\.)?(noctalia\\.Noctalia(\\.Settings)?)$" }, float = true, size = {"monitor_w*0.70", "monitor_h*0.70"} })
 
 -- Gaming
--- local gamingApps      = "^(steam_app_.*|gamescope)$"
+local gamingApps      = "^(steam_app_.*|gamescope|starcitizen\\.exe)$"
 -- local gamingWorkspace = "name:gaming"
 -- hl.window_rule({match = {xdg_tag = "^(.*game.*)$" },                                                              workspace = gamingWorkspace, content = "game" })
 -- hl.window_rule({match = {content = "game" },                                                                      workspace = gamingWorkspace })
 -- hl.window_rule({match = {class = gamingApps },                                                                    workspace = gamingWorkspace })
--- hl.window_rule({match = {class = "^(steam)$", title = "^(Friends List)$" },                                       float = true})
--- hl.window_rule({match = {class = "^(steam)$", title = "^(Launching\\.{3})$" },                                    float = true, center = true, workspace = gamingWorkspace })
--- hl.window_rule({match = {class = gamingApps, title = "^(.+)$", initial_title = "negative:^(.*\\\\home\\\\.*)$" }, content = "game", decorate = false})
--- hl.window_rule({match = {class = gamingApps, initial_title = "^$" },                                              center = true, float = true, immediate = true, workspace = gamingWorkspace })
+hl.window_rule({match = {class = "^(steam)$", title = "^(Friends List)$" },                                       float = true})
+hl.window_rule({match = {class = "^(steam)$", title = "^(Launching\\.{3})$" },                                    float = true, center = true })
+hl.window_rule({match = {class = gamingApps, initial_title = "^$" },                                              center = true, float = true, immediate = true })
 
--- Don't let noctalia's idle ladder screen-off/lock/suspend mid-game
--- hl.window_rule({match = {content = "game" },                                                                      idle_inhibit = "fullscreen"})
+-- Tag game windows (not their launchers) as content = "game"
+hl.window_rule({match = {class = gamingApps, title = "^(.+)$", initial_title = "negative:^(.*\\\\home\\\\.*)$" }, content = "game", decorate = false})
+
+-- Don't let noctalia's idle ladder screen-off/lock/suspend mid-game (only while fullscreen)
+hl.window_rule({match = {content = "game" },                                                                      idle_inhibit = "fullscreen"})
 
 -- Move
 -- kde-material-you-colors spawns a window when changing dark/light theme. This is to make sure it doesn't interfere at all.
