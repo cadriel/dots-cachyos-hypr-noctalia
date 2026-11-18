@@ -14,3 +14,6 @@ custom-shader = shaders/cursor_tail.glsl
 theme = noctalia
 
 #confirm-close-surface = always  # disabled by ghostty-config: back to the default
+
+# Drop Ghostty's default ctrl+enter=toggle_fullscreen (Hyprland's SUPER+F handles fullscreen)
+keybind = ctrl+enter=unbind
