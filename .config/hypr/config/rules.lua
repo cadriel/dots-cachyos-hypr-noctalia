@@ -49,6 +49,7 @@ hl.window_rule({match = {class = "^(Zotero)$" },                             flo
 hl.window_rule({match = {class = "^(Zotero)$" },                             size = {"(monitor_w*0.45)", "(monitor_h*0.45)"} })
 hl.window_rule({match = {title = "^(Winetricks.*|Protontricks.*)$" },        float = true})
 hl.window_rule({match = {title = "Shelly"},                                  float = true})
+hl.window_rule({match = {class = "^(tobii-manager)$" },                      float = true}) -- Faithful Tobii
 -- RSI Launcher (Star Citizen, Wine/Electron): frameless window that draws its own square frame,
 -- so drop Hyprland's border/rounding/shadow to avoid clipped corners and a doubled outline.
 hl.window_rule({match = {class = "^(rsi launcher\\.exe)$" }, float = true, size = {"monitor_w*0.5", "monitor_h*0.5"}, center = true, border_size = 0, rounding = 0, no_shadow = true })
